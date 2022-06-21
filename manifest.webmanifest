@@ -1,0 +1,5 @@
+{
+  "icons": [
+    { "src": "/beer.png", "type": "image/png", "sizes": "512x512" },
+  ]
+}
