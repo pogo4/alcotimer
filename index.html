@@ -1,56 +1,56 @@
 <!DOCTYPE HTML>
 <html style="height: 100%">
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-p {
-  text-align: center;
-  font-size: 60px;
-  margin-top: 0px;
-}
-</style>
-</head>
-<body style="
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: url('/1.jpg');
-    background-size: contain;
-    background-position-x: right;
-    background-repeat: no-repeat;
-    font-family: Calibri;
-    color: #444;
-">
-<div style="
-    flex: 1 0 100%;
-    margin-top: 80px;
-    font-size: 50px;
-"><h1>БУХААААТЬ!</h1></div>
-<p id="countdown" style="
-    font-size: 150px;
-"></p>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="beer.png" type="image/png">
+    <style>
+      p {
+        text-align: center;
+        font-size: 60px;
+        margin-top: 0px;
+      }
+    </style>
+  </head>
+  <body style="
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: url('/1.jpg');
+      background-size: contain;
+      background-position-x: right;
+      background-repeat: no-repeat;
+      font-family: Calibri;
+      color: #444;
+  ">
+    <div style="
+        flex: 1 0 100%;
+        margin-top: 80px;
+        font-size: 50px;
+    "><h1>БУХААААТЬ!</h1></div>
+    <p id="countdown" style="
+        font-size: 150px;
+    "></p>
 
-<script>
-var countDownDate = new Date("Jul 1, 2022 17:00:00").getTime();
+    <script>
+    var countDownDate = new Date("Jul 1, 2022 17:00:00").getTime();
 
-var x = setInterval(function() {
+    var x = setInterval(function() {
 
-  var now = new Date().getTime();
-  var distance = countDownDate - now;
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  document.getElementById("countdown").innerHTML = days + " <span style='font-size: 50px'>дней</span><br> " + String(hours).padStart(2,'0')  + ":"
-  + String(minutes).padStart(2,'0') + ":" + String(seconds).padStart(2,'0');
-    
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
-</script>
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-</body>
+      document.getElementById("countdown").innerHTML = days + " <span style='font-size: 50px'>дней</span><br> " + String(hours).padStart(2,'0')  + ":"
+      + String(minutes).padStart(2,'0') + ":" + String(seconds).padStart(2,'0');
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+    </script>
+  </body>
 </html>
