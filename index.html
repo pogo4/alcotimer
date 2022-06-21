@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html style="height: 100%">
+<html style="height: 100%; font-size: 5vmax;">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,6 @@
       .title{
         flex: 1 0 100%;
         margin-top: 80px;
-        font-size: 50px;
       }
       a{
         text-decoration: none;
@@ -37,7 +36,6 @@
       }
       p {
         text-align: center;
-        font-size: 150px;
         margin: 0px;
       }
       p span{
@@ -46,14 +44,20 @@
     </style>
   </head>
   <body>
-    <div class="title"><a href="#" onclick="test()">БУХААААТЬ!</a></div>
+    <div class="title"><a href="#" onclick="playBuhat()">БУХААААТЬ!</a></div>
     <p id="countdown"></p>
     <script>
-        function test(){
-            var audio = document.createElement('audio');
+        function playBuhat(){
+          var audio = document.getElementById('buhat');
+          if(!audio){
+            audio = document.createElement('audio');
+            document.body.appendChild(audio);
+            audio.id = 'buhat';
             audio.setAttribute("autoplay","true");
             audio.innerHTML = "<source src=\"1.mp3\" type=\"audio/mpeg\">";
-            document.body.appendChild(audio);
+          }else{
+            audio.play();
+          }
         }
     </script>
     <script>
