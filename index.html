@@ -3,35 +3,43 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="beer.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
     <title>АлкоТаймер</title>
     <meta name="description" content="Очень удобная вещь, чтобы не забыть, сколько осталось до путешествия в Приморско-Ахтарск!)">
     <style>
-      p {
-        text-align: center;
-        font-size: 60px;
-        margin-top: 0px;
+      * {
+        font-family: 'Roboto Mono', monospace;
       }
-    </style>
-  </head>
-  <body style="
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: url('/1.jpg');
-      background-size: contain;
-      background-position-x: right;
-      background-repeat: no-repeat;
-      font-family: Calibri;
-      color: #444;
-  ">
-    <div style="
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: url('/1.jpg');
+        background-size: contain;
+        background-position-x: right;
+        background-repeat: no-repeat;
+        color: #444;
+      }
+      .title{
         flex: 1 0 100%;
         margin-top: 80px;
         font-size: 50px;
-    "><h1>БУХААААТЬ!</h1></div>
-    <p id="countdown" style="
+      }
+      p {
+        text-align: center;
         font-size: 150px;
-    "></p>
+        margin: 0px;
+      }
+      p span{
+        font-size: 45%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title"><h1>БУХААААТЬ!</h1></div>
+    <p></p>
 
     <script>
     var countDownDate = new Date("Jul 1, 2022 17:00:00").getTime();
@@ -45,7 +53,7 @@
       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      document.getElementById("countdown").innerHTML = days + " <span style='font-size: 50px'>дней</span><br> " + String(hours).padStart(2,'0')  + ":"
+      document.getElementById("countdown").innerHTML = days + " <span>дней</span><br> " + String(hours).padStart(2,'0')  + ":"
       + String(minutes).padStart(2,'0') + ":" + String(seconds).padStart(2,'0');
 
       if (distance < 0) {
