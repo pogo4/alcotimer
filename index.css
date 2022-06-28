@@ -41,7 +41,7 @@ p#countdown span{
 #tas{
   display: block;
   position: absolute;
-  bottom: 2%;
+  bottom: -150px;
   height: 100px;
   width: 100px;
   background-image: url(2.jpg);
