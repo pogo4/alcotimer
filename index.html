@@ -38,11 +38,11 @@
       function playBuhat(){
         animateTas();
         document.getElementById('buhat').play();
+        setTimeout(1500);
+        animateTas();
       }  
       function animateTas(){
-        tas.style.bottom = '150px';
-        setInterval(1000);
-        tas.style.bottom = '-150px'
+        tas.style.bottom = (tas.style.bottom == '100px') ? '-150px' : '100px';
       }
       var x = setInterval(function() {
 
