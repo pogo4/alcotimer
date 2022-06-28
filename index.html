@@ -22,7 +22,8 @@
     </script>
     <script>
     var countDownDate = new Date("Jul 1, 2022 17:00:00").getTime();
-
+    const countdown = document.getElementById("countdown");
+      
     var x = setInterval(function() {
 
       var now = new Date().getTime();
@@ -31,15 +32,29 @@
       var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("countdown").innerHTML = days + " <span>дней</span><br> " + String(hours).padStart(2,'0')  + ":"
-      + String(minutes).padStart(2,'0') + ":" + String(seconds).padStart(2,'0');
+      
+      let days_word = 'дней';
+      
+      let remainder = days %% 10;
+      
+      if(days < 10 || days > 20){
+        if(remainder == 1) days_word = 'день';
+        if{remainder > 1 && remainder < 5) days_word = 'дня';
+      }
+      
+      let innerHtml = '';
+        
+      if(days > 0) innerHtml = days + " <span>" + days_word + "</span><br> ";
+        
+      innerHtml += String(hours).padStart(2,'0')  + ":" + String(minutes).padStart(2,'0') + ":" + String(seconds).padStart(2,'0') + String(distance).padStart(2,'0');
+        
+      countdown.innerHTML = innerHtml;
 
       if (distance < 0) {
         clearInterval(x);
         playBuhat();
       }
-    }, 1000);
+    }, 10);
     </script>
   </body>
 </html>
