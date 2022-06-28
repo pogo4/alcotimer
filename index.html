@@ -43,8 +43,6 @@
       }  
       function animateTas(){
         let visible = tas.style.bottom == '150px';
-        let p = tas.firstChild;
-        p.style.display = visible ? 'block' : 'none';
         tas.style.bottom = (visible) ? '-300px' : '150px';
       }
       var x = setInterval(function() {
