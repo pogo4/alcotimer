@@ -37,11 +37,12 @@
       
       function playBuhat(){
         animateTas();
+        window.setTimeout(, 500);
         document.getElementById('buhat').play();
         window.setTimeout(animateTas, 1500);
       }  
       function animateTas(){
-        tas.style.bottom = (tas.style.bottom == '100px') ? '-150px' : '100px';
+        tas.style.bottom = (tas.style.bottom == '200px') ? '-250px' : '200px';
       }
       var x = setInterval(function() {
 
