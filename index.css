@@ -41,7 +41,7 @@ p#countdown span{
 #tas{
   display: block;
   position: absolute;
-  bottom: -250px;
+  bottom: -300px;
   height: 200px;
   width: 200px;
   background-image: url(2.jpg);
@@ -61,4 +61,5 @@ p#countdown span{
   border-radius: 20px 15px 20px 0px;
   background: #dfffdd;
   margin-top: -81px;
+  transition: display 0.5s ease 1s;
 }
