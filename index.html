@@ -38,8 +38,7 @@
       function playBuhat(){
         animateTas();
         document.getElementById('buhat').play();
-        setTimeout(1500);
-        animateTas();
+        window.setTimeout(animateTas, 1500);
       }  
       function animateTas(){
         tas.style.bottom = (tas.style.bottom == '100px') ? '-150px' : '100px';
