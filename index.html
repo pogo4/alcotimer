@@ -14,9 +14,7 @@
     <div class="title"><a href="#" onclick="playBuhat()">Работать осталось</a></div>
     <p id="countdown"></p>
     <audio id="buhat" src="1.mp3" type="audio/mpeg" autoplay="true"></audio>
-    <script>
-       
-    </script>
+    <div id='tas'></div>
     <script>
       let urlParams;
       let options = {
@@ -35,10 +33,16 @@
       
       var countDownDate = new Date(options.date).getTime();
       const countdown = document.getElementById("countdown");
+      const tas = document.getElementsById('tas');
       
       function playBuhat(){
+        animateTas();
         document.getElementById('buhat').play();
       }  
+      function animateTas(){
+        tas.style.display = 'block';
+        tas.style.bottom = '100px';
+      }
       var x = setInterval(function() {
 
         var now = new Date().getTime();
