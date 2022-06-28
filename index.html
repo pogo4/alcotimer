@@ -42,7 +42,11 @@
         window.setTimeout(animateTas, 1500);
       }  
       function animateTas(){
-        tas.style.bottom = (tas.style.bottom == '200px') ? '-250px' : '200px';
+        let visible = tas.style.bottom == '150px';
+        tas.style.bottom = (visible) ? '-300px' : '150px';
+        let p = tas.firstChild;
+        p.style.display = visible ? 'block' : 'none';
+        
       }
       var x = setInterval(function() {
 
