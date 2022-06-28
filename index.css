@@ -41,24 +41,24 @@ p#countdown span{
 #tas{
   display: block;
   position: absolute;
-  bottom: -150px;
-  height: 100px;
-  width: 100px;
+  bottom: -250px;
+  height: 200px;
+  width: 200px;
   background-image: url(2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 50%;
   background-position: 50% 0%;
-  transition: bottom 1s ease 0s;
+  transition: bottom 0.5s ease 0s;
 }
 #tas p{
-  font-size: 26%;
+  font-size: 50%;
   display: block;
-  margin-left: 100px;
+  margin-left: 234px;
   border: 1px solid #999;
-  padding: 10px 10px;
-  width: 120px;
+  padding: 20px;
+  width: 170px;
   border-radius: 20px 15px 20px 0px;
   background: #dfffdd;
-  margin-top: -45px;
+  margin-top: -81px;
 }
