@@ -53,18 +53,11 @@
   <body>
     <div class="title"><a href="#" onclick="playBuhat()">Работать осталось</a></div>
     <p id="countdown"></p>
+    <audio id="buhat" src="1.mp3" type="audio/mpeg" autoplay="true"></audio>
     <script>
         function playBuhat(){
           var audio = document.getElementById('buhat');
-          if(!audio){
-            audio = document.createElement('audio');
-            document.body.appendChild(audio);
-            audio.id = 'buhat';
-            audio.setAttribute("autoplay","true");
-            audio.innerHTML = "<source src=\"1.mp3\" type=\"audio/mpeg\">";
-          }else{
-            audio.play();
-          }
+          audio.play();
         }
     </script>
     <script>
@@ -84,7 +77,7 @@
 
       if (distance < 0) {
         clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
+        playBuhat();
       }
     }, 1000);
     </script>
