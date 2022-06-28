@@ -53,7 +53,6 @@ p#countdown span{
 }
 #tas p{
   font-size: 50%;
-  display: block;
   margin-left: 234px;
   border: 1px solid #999;
   padding: 20px;
@@ -61,5 +60,5 @@ p#countdown span{
   border-radius: 20px 15px 20px 0px;
   background: #dfffdd;
   margin-top: -81px;
-  transition: display 0.5s ease 1s;
+  transition: display 0.5s ease 0s;
 }
