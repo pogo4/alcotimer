@@ -15,47 +15,62 @@
     <p id="countdown"></p>
     <audio id="buhat" src="1.mp3" type="audio/mpeg" autoplay="true"></audio>
     <script>
-        function playBuhat(){
-          var audio = document.getElementById('buhat');
-          audio.play();
-        }
+       
     </script>
     <script>
-    var countDownDate = new Date("Jul 1, 2022 17:00:00").getTime();
-    const countdown = document.getElementById("countdown");
+      let urlParams;
+      let options = {
+        date: new Date(new Date().getTime.getFullYear() + '-12-31T23:59:59')
+      };
       
-    var x = setInterval(function() {
-
-      var now = new Date().getTime();
-      var distance = countDownDate - now;
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      let milliseconds = Math.floor((distance % 1000) / 10);
+      if(location.search.startsWith('?')) urlParams = location.search.slice(1).split('&');
       
-      let days_word = 'дней';
-      
-      let remainder = days % 10;
-      
-      if(days < 10 || days > 20){
-        if(remainder == 1) days_word = 'день';
-        if(remainder > 1 && remainder < 5) days_word = 'дня';
+      if(urlParams){
+        let a = [];
+        urlParams.forEach(e => {
+          a.push(e.split('='));
+        });
+        Object.assign(options, Object.fromEntries(a));
       }
       
-      let innerHtml = '';
-        
-      if(days > 0) innerHtml = days + " <span>" + days_word + "</span><br> ";
-        
-      innerHtml += String(hours).padStart(2,'0')  + ":" + String(minutes).padStart(2,'0') + ":" + String(seconds).padStart(2,'0') + ':' + String(milliseconds).padStart(2,'0');
-        
-      countdown.innerHTML = innerHtml;
+      var countDownDate = new Date(options.date).getTime();
+      const countdown = document.getElementById("countdown");
+      
+      function playBuhat(){
+        document.getElementById('buhat').play();
+      }  
+      var x = setInterval(function() {
 
-      if (distance < 0) {
-        clearInterval(x);
-        playBuhat();
-      }
-    }, 10);
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        let milliseconds = Math.floor((distance % 1000) / 10);
+
+        let days_word = 'дней';
+
+        let remainder = days % 10;
+
+        if(days < 10 || days > 20){
+          if(remainder == 1) days_word = 'день';
+          if(remainder > 1 && remainder < 5) days_word = 'дня';
+        }
+
+        let innerHtml = '';
+
+        if(days > 0) innerHtml = days + " <span>" + days_word + "</span><br> ";
+
+        innerHtml += String(hours).padStart(2,'0')  + ":" + String(minutes).padStart(2,'0') + ":" + String(seconds).padStart(2,'0') + ':' + String(milliseconds).padStart(2,'0');
+
+        countdown.innerHTML = innerHtml;
+
+        if (distance < 0) {
+          clearInterval(x);
+          playBuhat();
+        }
+      }, 10);
     </script>
   </body>
 </html>
