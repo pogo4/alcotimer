@@ -30,11 +30,35 @@ a{
 a:visited{
   color: #444;
 }
-p {
+p#countdown {
   text-align: left;
   margin: 0px;
   flex: 1 1 auto;
 }
-p span{
+p#countdown span{
   font-size: 45%;
+}
+#tas{
+  display: block;
+  position: absolute;
+  bottom: 2%;
+  height: 100px;
+  width: 100px;
+  background-image: url(2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  background-position: 50% 0%;
+  transition: bottom 1s ease 0s;
+}
+#tas p{
+  font-size: 26%;
+  display: block;
+  margin-left: 100px;
+  border: 1px solid #999;
+  padding: 10px 10px;
+  width: 120px;
+  border-radius: 20px 15px 20px 0px;
+  background: #dfffdd;
+  margin-top: -45px;
 }
