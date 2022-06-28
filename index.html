@@ -39,14 +39,13 @@
         animateTas();
         window.setTimeout(null, 1000);
         document.getElementById('buhat').play();
-        window.setTimeout(animateTas, 4000);
+        window.setTimeout(animateTas, 2000);
       }  
       function animateTas(){
         let visible = tas.style.bottom == '150px';
-        tas.style.bottom = (visible) ? '-300px' : '150px';
         let p = tas.firstChild;
         p.style.display = visible ? 'block' : 'none';
-        
+        tas.style.bottom = (visible) ? '-300px' : '150px';
       }
       var x = setInterval(function() {
 
