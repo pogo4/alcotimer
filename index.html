@@ -37,13 +37,13 @@
       
       function playBuhat(){
         animateTas();
-        window.setTimeout(null, 1000);
+        window.setTimeout(null, 1500);
         document.getElementById('buhat').play();
-        window.setTimeout(animateTas, 2000);
+        window.setTimeout(animateTas, 2500);
       }  
       function animateTas(){
-        let visible = tas.style.bottom == '150px';
-        tas.style.bottom = (visible) ? '-300px' : '150px';
+        let visible = tas.style.bottom == '120px';
+        tas.style.bottom = (visible) ? '-300px' : '120px';
       }
       var x = setInterval(function() {
 
