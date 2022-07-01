@@ -50,14 +50,10 @@
       }
       function congratulate(){
         document.getElementById('gudok').play();
-        window.setTimeout(null, 4000);
-        document.getElementById('whatislove').play();
+        window.setTimeout(whatislove, 4000);
       }
-      function playBuhat(){
-        animateTas();
-        window.setTimeout(null, 1500);
-        document.getElementById('buhat').play();
-        window.setTimeout(animateTas, 1500);
+      function playWhatislove(){
+        document.getElementById('whatislove').play();
       }
       
       var x = setInterval(function() {
@@ -90,6 +86,8 @@
         if (distance < 0) {
           clearInterval(x);
           congratulate();
+          countdown.innerHTML = 'БУХАААТЬ!!!';
+          document.querySelector('title').innerHtml = 'УРААА';
         }
       }, 10);
     </script>
